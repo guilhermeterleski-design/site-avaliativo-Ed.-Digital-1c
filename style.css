@@ -1,0 +1,88 @@
+/* --- DESIGN TOKENS (SISTEMA DE DESIGN) --- */
+:root {
+    /* Cores Dinâmicas */
+    --accent: #2563eb;
+    --accent-glow: rgba(37, 99, 235, 0.3);
+    --bg: #ffffff;
+    --text: #0f172a;
+    --surface: #f8fafc;
+    --border: #e2e8f0;
+    
+    /* Tipografia Fluida (Clamp: Min - Ideal - Max) */
+    --fs-h1: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+    --fs-body: clamp(1rem, 0.5vw + 0.8rem, 1.25rem);
+    
+    --radius: 1rem;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- TEMA ESCURO / ALTO CONTRASTE --- */
+body.dark-mode {
+    --bg: #020617;
+    --text: #f1f5f9;
+    --surface: #1e293b;
+    --border: #334155;
+}
+
+/* --- RESET & LAYOUT --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.5;
+    transition: background 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.container { width: 90%; max-width: 1300px; margin: auto; }
+
+/* --- HERO GRADIENT --- */
+.gradient-text {
+    background: linear-gradient(90deg, var(--accent), #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- SMART GRID (CSS GRID) --- */
+.smart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+    gap: 2rem;
+}
+
+.modern-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: var(--radius);
+    transition: transform 0.3s var(--ease);
+}
+
+.modern-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px var(--accent-glow);
+}
+
+/* --- ACESSIBILIDADE: REDUÇÃO DE MOVIMENTO --- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* --- SKELETON ANIMATION --- */
+.skeleton-loader {
+    height: 300px;
+    background: linear-gradient(90deg, var(--surface) 25%, var(--border) 50%, var(--surface) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: var(--radius);
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
