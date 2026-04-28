@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vôlei Elite - A plataforma definitiva para fundamentos de vôlei.">
+    <title>Vôlei Elite | Pro Experience</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+    <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+    <header class="main-header" role="banner">
+        <nav class="navbar container">
+            <div class="logo">Vôlei<span>Elite</span></div>
+            <div class="toolbar" role="toolbar" aria-label="Ferramentas de Usuário">
+                <button id="toggle-theme" class="btn-icon" aria-label="Alternar Tema">🌓</button>
+                <div class="font-controls">
+                    <button id="font-down" aria-label="Diminuir texto">-</button>
+                    <button id="font-up" aria-label="Aumentar texto">+</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-v2">
+            <div class="container hero-grid">
+                <div class="hero-text reveal">
+                    <h1>Sinta a <span class="gradient-text">Energia</span> do Jogo</h1>
+                    <p>Uma experiência imersiva nos fundamentos do voleibol moderno, desenhada para atletas e entusiastas.</p>
+                    <button class="btn-primary" onclick="document.getElementById('tech-section').scrollIntoView()">Começar Agora</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech-section" class="section container">
+            <div class="section-intro reveal">
+                <h2>Fundamentos</h2>
+                <div class="skeleton-loader" id="grid-skeleton"></div>
+            </div>
+            <div id="dynamic-grid" class="smart-grid"></div>
+        </section>
+
+        <section class="expandable-section container reveal">
+            <h2>Regras e Curiosidades</h2>
+            <div id="accordion-group" class="modern-accordion"></div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <p>Vôlei Elite 2026 • Design Acessível</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
